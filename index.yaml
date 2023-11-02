@@ -3,23 +3,34 @@ entries:
   accesschart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-11-13T19:44:20.802372601+01:00"
+    created: "2023-11-02T15:41:51.04273174+01:00"
     description: A Helm chart for Kubernetes
     digest: b6eff9cf299a4f1d7c806421e0fef9f39e59e31e15777f56a872f3cfe3303766
     name: accesschart
     type: application
     urls:
-    - https://educaredes.github.io/nfv-lab/accesschart-0.1.0.tgz
+    - https://educaredes.github.io/sdw-lab/accesschart-0.1.0.tgz
     version: 0.1.0
   cpechart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-11-13T19:44:20.805525147+01:00"
+    created: "2023-11-02T15:41:51.043128421+01:00"
     description: A Helm chart for Kubernetes
     digest: 33e7a2973a7664e175bccb21815e3fa0aaf2e41a8d6a41e8a15490f2c4e0136b
     name: cpechart
     type: application
     urls:
-    - https://educaredes.github.io/nfv-lab/cpechart-0.1.0.tgz
+    - https://educaredes.github.io/sdw-lab/cpechart-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-13T19:44:20.772735265+01:00"
+  testchart:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-11-02T15:41:51.043491529+01:00"
+    description: A Helm chart for Kubernetes
+    digest: c55068f67c29211bcd3b3ba9dd3e0544a383dcecf27990e574e8d9ce812e5d43
+    name: testchart
+    type: application
+    urls:
+    - https://educaredes.github.io/sdw-lab/testchart-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-11-02T15:41:51.0420171+01:00"
