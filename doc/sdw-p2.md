@@ -137,7 +137,7 @@ y VNFs.
 - _Instances_: gestión de la instancias de los servicios desplegados
 - _K8s_: gestión del registro de clústeres y repositorios k8s
 
-## 4. Repositorio de helm charts y docker
+## 4. (P) Repositorio de helm charts
 
 Para implementar las funciones de red virtualizadas se usarán _helm charts_, que
 empaquetan todos los recursos necesarios para el despliegue de una aplicación en
@@ -154,7 +154,8 @@ Acceda a la opción de menú _K8s Repos_, haga clic sobre el botón
 ![sdw-lab-repository-details](img/sdw-lab-k8s-repository.png)
 
 En la carpeta compartida `$HOME/shared/sdw-lab/helm` puede encontrar la
-definición del helm chart `testchart` que se usará en esta práctica.
+definición de los _helm charts_ `pingchart` y `pongchart` que se usarán en esta
+práctica.
 
 
 ## 5. Instalación de descriptores en OSM
@@ -162,10 +163,10 @@ definición del helm chart `testchart` que se usará en esta práctica.
 Desde el _PC anfitrión_, acceda gráficamente al directorio 
 `$HOME/shared/sdw-lab/pck`. Realice el proceso de instalación de los 
 descriptores de KNFs y del servicio de red (onboarding):
-- Acceda al menu de OSM Packages->VNF packages y arrastre el fichero
-`testknf_vnfd.tar.gz`. 
+- Acceda al menu de OSM Packages->VNF packages y arrastre los ficheros
+`pingknf_vnfd.tar.gz` y `pongknf_vnfd.tar.gz`. 
 - Acceda al menu de OSM Packages->NS packages y arrastre el fichero 
-`test_ns.tar.gz`
+`pingpong_ns.tar.gz`
 
 ## 6. (P) Análisis de descriptores
 
@@ -177,7 +178,7 @@ usado para realizar el registro contienen precisamente una la representación
 textual de la definición en formato YAML. Para entregar como resultado de la
 práctica:
 
-1.	En la descripción de la VNF, identifique y copie la información referente
+1.	En la descripción de las VNFs, identifique y copie la información referente
 al helm chart que se utiliza para desplegar el pod correspondiente en el clúster
 de Kubernetes.
 
@@ -189,12 +190,12 @@ referente a las VNFs definidas.
 Desde el terminal lanzamos los siguientes comandos:
 
 ```
-export NSID1=$(osm ns-create --ns_name testA --nsd_name test --vim_account dummy_vim)
+export NSID1=$(osm ns-create --ns_name pingpong1 --nsd_name pingpong --vim_account dummy_vim)
 echo $NSID1
 ```
 
 Mediante el comando `watch` visualizaremos el estado de la instancia del 
-servicio, que hemos denominado `testA`. 
+servicio, que hemos denominado `pingpong1`. 
 
 ```
 watch osm ns-list
@@ -225,8 +226,8 @@ kubectl -n $OSMNS get pods
 A continuación, defina dos variables:
 
 ```
-POD1=<nombre de uno de los pods>
-POD2=<nombre del otro pod>
+PING=<nombre del pod ping>
+PONG=<nombre del pod pong>
 ```
 
 ## 9. (P) Acceso a los pods ya arrancados
@@ -236,12 +237,12 @@ siguientes comandos y explique dicho resultado. ¿Qué red están utilizando
 los pods para esa comunicación?
 
 ```
-kubectl -n $OSMNS exec -it $POD1 -- ifconfig eth0
-# anote la dirección IP
+# obtenga y anote la dirección IP de pong
+kubectl -n $OSMNS exec -it $PONG -- ifconfig eth0
 
-kubectl -n $OSMNS exec -it $POD2 -- /bin/bash
 # Y a continuación haga un ping a la dirección IP anotada
-# Salga con exit
+kubectl -n $OSMNS exec -it $PING -- ping -c 3 <direccion IP de pong>
+
 ```
 
 Para terminar esta parte, a través de las opciones OSM:
