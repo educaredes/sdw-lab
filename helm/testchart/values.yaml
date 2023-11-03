@@ -5,10 +5,13 @@
 replicaCount: 1
 
 image:
-  #repository: educaredes/vnf-img
-  #pullPolicy: Always
-  repository: nginx
+  repository: alpine
   pullPolicy: IfNotPresent
+  #repository: educaredes/vnf-img
+  #pullPolicy: IfNotPresent
+  #pullPolicy: Always
+  #repository: nginx
+  #pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
 

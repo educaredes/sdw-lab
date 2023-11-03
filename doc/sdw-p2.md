@@ -157,7 +157,7 @@ En la carpeta compartida `$HOME/shared/sdw-lab/helm` puede encontrar la
 definición del helm chart `testchart` que se usará en esta práctica.
 
 
-## 6. Instalación de descriptores en OSM
+## 5. Instalación de descriptores en OSM
 
 Desde el _PC anfitrión_, acceda gráficamente al directorio 
 `$HOME/shared/sdw-lab/pck`. Realice el proceso de instalación de los 
@@ -167,7 +167,7 @@ descriptores de KNFs y del servicio de red (onboarding):
 - Acceda al menu de OSM Packages->NS packages y arrastre el fichero 
 `test_ns.tar.gz`
 
-## 7. (P) Análisis de descriptores
+## 6. (P) Análisis de descriptores
 
 Acceda a continuación a la descripción de las VNFs y del servicio, tanto su
 representación textual (botón “Edit”) como gráfica (botón “Show graph”).
@@ -184,7 +184,7 @@ de Kubernetes.
 2.	En la descripción del servicio, identifique y copie la información 
 referente a las VNFs definidas.
 
-## 9. Creación de instancias del servicio
+## 7. Creación de instancias del servicio
 
 Desde el terminal lanzamos los siguientes comandos:
 
@@ -214,7 +214,7 @@ Y a continuación lanzar de nuevo la creación de una nueva instancia.
 Acceda a la GUI de OSM, opción NS Instances, para ver cómo también es posible
 gestionar el servicio gráficamente.
 
-## 10. Comprobación de los pods arrancados
+## 8. Comprobación de los pods arrancados
 
 Usaremos kubectl para obtener los pods que han arrancado en el clúster:
 
@@ -229,7 +229,7 @@ POD1=<nombre de uno de los pods>
 POD2=<nombre del otro pod>
 ```
 
-## 11. (P) Acceso a los pods ya arrancados
+## 9. (P) Acceso a los pods ya arrancados
 
 Haga una captura del texto o captura de pantalla del resultado de los 
 siguientes comandos y explique dicho resultado. ¿Qué red están utilizando 
@@ -259,7 +259,6 @@ Muestra los descriptores registrados:
 osm nsd-list
 osm vnfd-list
 ```
-
 
 Muestra las vnf y los ns activos:
 
