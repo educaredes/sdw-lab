@@ -331,8 +331,19 @@ kubectl  -n $OSMNS exec -it $PONG -- wget -O - 10.100.3.3
 # Resultado y explicación:
 ```
 
-Para terminar a través de las opciones OSM:
-- Dé de baja la instancia del NS (icono de papelera en NS instances)
+Para terminar:
+
+- Dé de baja la instancia del NS
+```
+osm ns-delete $NSID1
+```
+
+- Cierre el escenario de la red:
+
+```
+cd /home/upm/shared/sdw-lab/vnx
+sudo vnx -f sdw_nets.xml -P
+```
 
 ## 13. (P) Conclusiones
 
