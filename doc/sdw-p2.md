@@ -38,10 +38,6 @@ configurado todo el software necesario, por lo que no es necesario volver a
 descargarla. La máquina ya tiene instaladas todas las herramientas necesarias,
 principalmente:
 
-El escenario explicado se va a implementar para la práctica en una máquina Linux
-en VirtualBox, **RDSV-K8S**, que permite emular las distintas redes y hosts del
-escenario, y el cluster de Kubernetes (K8s) de la central local. Tiene
-instaladas las herramientas:
 - la infraestructura de NFV (NFVI) que va a ser controlada por OSM, implementada
   mediante el paquete _microk8s_, que proporcionará la funcionalidad de un
   clúster de Kubernetes (k8s),
@@ -130,7 +126,7 @@ firefox 10.11.12.1 &
 
 Familiarícese con las distintas opciones del menú, especialmente:
 - _Packages_: gestión de las plantillas de servicios de red (NS Packages)
-y VNFs. 
+y VNFs (VNF Packages). 
 - _Instances_: gestión de la instancias de los servicios desplegados
 - _K8s_: gestión del registro de clústeres y repositorios k8s
 
@@ -143,10 +139,10 @@ charts_ que utilizaremos en la práctica, alojado en Github Pages.
 
 Acceda a la opción de menú _K8s Repos_, haga clic sobre el botón
  _Add K8s Repository_ y rellene los campos con los valores:
-- id: `helmchartrepo`
-- type: "Helm Chart" 
+- Name: `helmchartrepo`
+- Type: "Helm Chart" 
 - URL: `https://educaredes.github.io/sdw-lab` (NO DEBE TERMINAR EN "/")
-- description: _una descripción textual del repositorio_
+- Description: _una descripción textual del repositorio_
 
 ![sdw-lab-repository-details](img/sdw-lab-k8s-repository.png)
 
@@ -157,7 +153,7 @@ práctica.
 
 ## 5. Instalación de descriptores en OSM
 
-Desde el _PC anfitrión_, acceda gráficamente al directorio 
+Desde la maquina virtual, acceda gráficamente al directorio 
 `$HOME/shared/sdw-lab/pck`. Realice el proceso de instalación de los 
 descriptores de KNFs y del servicio de red (onboarding):
 - Acceda al menu de OSM Packages->VNF packages y arrastre los ficheros
