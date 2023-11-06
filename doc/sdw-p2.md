@@ -41,6 +41,7 @@ Figura 1
 Kubernetes es una plataforma de código libre diseñada para el despliegue de aplicaciones basadas en contenedores. Proporciona múltiples funciones de escalabilidad, resistencia a fallos, actualizaciones y regresiones progresivas, etc. que la hacen muy adecuada para el despliegue de VNFs. Kubernetes incluye su propio gestor de paquetes, denominado Helm, que define la forma de crear y operar repositorios en los que se almacenan los denominados Charts (paquetes en terminología Helm). Básicamente, un Chart define un conjunto de recursos de Kubernetes (contenedores, balanceadores, etc.) que se pueden posteriormente desplegar sobre un clúster de Kubernetes. Adicionalmente, las imágenes de los contenedores usados por Kubernetes suelen almacenarse en repositorios privados o, más comúnmente, en el repositorio oficial de Docker denominado DockerHub.  
 <br><br>
 En la Figura 2 se aprecia con más detalle la relación entre las distintas plataformas y repositorios involucrados en la práctica, que consistirá en el despliegue de un servicio de red sencillo (pingpong) compuesto por dos VNFs interconectadas a través de una red virtual. Para desplegar dicho servicio se proporcionan los descriptores del servicio y de las dos VNFs que lo componen, escritos en YAML de acuerdo a las especificaciones de OSM. 
+<br><br>
 <p align="center">
 <img alt="Fig 2 actividad UD2" src='img/UD2-actividad-fig2.png' width='50%'>
 <br>
