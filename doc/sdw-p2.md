@@ -32,6 +32,32 @@ sus VNFs en este tipo de plataformas NFV.
 
 # Entorno
 
+La Figura 1 representa el entorno en el que se va a desarrollar la práctica, mostrando su relación con la arquitectura NFV definida por ETSI. Como plataforma de gestión de VNFs se utilizará la plataforma de referencia de ETSI, Open Source Mano (OSM), que, como se ha visto en la teoría, comprende los dos niveles superiores del MANO: el NFVO para gestionar el ciclo de vida de los servicios de red (NS); y el VNFM para gestionar el ciclo de vida de las funciones de red (VNF). Como Virtualized Infrastructure Manager (VIM) se va a utilizar un clúster de Kubernetes, que permite el despliegue de VNFs como contenedores, habitualmente denominados KNFs.
+<p align="center">
+<img alt="Fig 1 actividad UD2" src='img/UD2-actividad-fig1.png' width='100%'>
+<br>
+Figura 1
+</p>
+Kubernetes es una plataforma de código libre diseñada para el despliegue de aplicaciones basadas en contenedores. Proporciona múltiples funciones de escalabilidad, resistencia a fallos, actualizaciones y regresiones progresivas, etc. que la hacen muy adecuada para el despliegue de VNFs. Kubernetes incluye su propio gestor de paquetes, denominado Helm, que define la forma de crear y operar repositorios en los que se almacenan los denominados Charts (paquetes en terminología Helm). Básicamente, un Chart define un conjunto de recursos de Kubernetes (contenedores, balanceadores, etc.) que se pueden posteriormente desplegar sobre un clúster de Kubernetes. Adicionalmente, las imágenes de los contenedores usados por Kubernetes suelen almacenarse en repositorios privados o, más comúnmente, en el repositorio oficial de Docker denominado DockerHub.  
+<br><br>
+En la Figura 2 se aprecia con más detalle la relación entre las distintas plataformas y repositorios involucrados en la práctica, que consistirá en el despliegue de un servicio de red sencillo (pingpong) compuesto por dos VNFs interconectadas a través de una red virtual. Para desplegar dicho servicio se proporcionan los descriptores del servicio y de las dos VNFs que lo componen, escritos en YAML de acuerdo a las especificaciones de OSM. 
+<br><br>
+<p align="center">
+<img alt="Fig 2 actividad UD2" src='img/UD2-actividad-fig2.png' width='50%'>
+<br>
+Figura 2
+</p>
+Los descriptores de las VNFs internamente hacen referencia a dos Chart de Kubernetes en los que se definen los detalles de implementación de las VNFs (imagen, recursos de memoria y CPU, etc.). Estos Chart están almacenados en un repositorio Helm previamente creado en GitHub. A su vez los Chart hacen referencia a una imagen de contenedor basada en Alpine Linux que está almacenada en DockerHub.
+<br><br>
+A grandes rasgos, la práctica consistirá en la:
+
+-	Carga de los descriptores de NS y VNFs en la plataforma OSM.
+-	Configuración en OSM del acceso al repositorio Helm en el que se encuentran los Chart asociados a las VNFs.
+-	Creación de una instancia del servicio y comprobación de su funcionamiento.
+-	Conexión de las VNFs con sistemas externos a la plataforma NFV.
+
+Todo ello con el objetivo de comprender el funcionamiento de un escenario limitado pero realista de NFVs.
+
 Para facilitar la tarea del estudiante, se utilizará la misma máquina virtual
 VirtualBox de la anterior actividad práctica, en la que ya está instalado y
 configurado todo el software necesario, por lo que no es necesario volver a
