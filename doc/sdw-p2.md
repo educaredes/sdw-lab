@@ -34,7 +34,7 @@ sus VNFs en este tipo de plataformas NFV.
 
 La Figura 1 representa el entorno en el que se va a desarrollar la práctica, mostrando su relación con la arquitectura NFV definida por ETSI. Como plataforma de gestión de VNFs se utilizará la plataforma de referencia de ETSI, Open Source Mano (OSM), que, como se ha visto en la teoría, comprende los dos niveles superiores del MANO: el NFVO para gestionar el ciclo de vida de los servicios de red (NS); y el VNFM para gestionar el ciclo de vida de las funciones de red (VNF). Como Virtualized Infrastructure Manager (VIM) se va a utilizar un clúster de Kubernetes, que permite el despliegue de VNFs como contenedores, habitualmente denominados KNFs.
 <p align="center">
-<img alt="Fig 1 actividad UD2" src='img/UD2-actividad-fig1.png' width='100%'>
+<img alt="Fig 1 actividad UD2" src='img/UD2-actividad-fig1.drawio.png' width='100%'>
 <br>
 Figura 1
 </p>
@@ -43,7 +43,7 @@ Kubernetes es una plataforma de código libre diseñada para el despliegue de ap
 En la Figura 2 se aprecia con más detalle la relación entre las distintas plataformas y repositorios involucrados en la práctica, que consistirá en el despliegue de un servicio de red sencillo (pingpong) compuesto por dos VNFs interconectadas a través de una red virtual. Para desplegar dicho servicio se proporcionan los descriptores del servicio y de las dos VNFs que lo componen, escritos en YAML de acuerdo a las especificaciones de OSM. 
 <br><br>
 <p align="center">
-<img alt="Fig 2 actividad UD2" src='img/UD2-actividad-fig2.png' width='50%'>
+<img alt="Fig 2 actividad UD2" src='img/UD2-actividad-fig2.drawio.png' width='50%'>
 <br>
 Figura 2
 </p>
