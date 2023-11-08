@@ -43,9 +43,9 @@ principalmente:
   clúster de Kubernetes (k8s),
 - scripts en la carpeta ~/bin para facilitar la gestión del entorno
 
-Esta máquina tendrá conectividad con un servidor OSM instalado en la
-infraestructura de laboratorios del DIT, a través de una red privada virtual
-creada mediante la herramienta _tinc_. 
+Esta máquina tendrá conectividad, a través de una red privada virtual
+creada mediante la herramienta _tinc_ , con un servidor OSM instalado en la
+infraestructura de laboratorios del [Departamento de Ingeniería de Sistemas Telemáticos (DIT)](https://dit.upm.es) de la Universidad Politécnica de Madrid. 
 
 # Desarrollo de la práctica
 ## 1. Instalación del entorno
@@ -159,7 +159,7 @@ descriptores de KNFs y del servicio de red (onboarding):
 - Acceda al menu de OSM Packages->VNF packages y arrastre los ficheros
 `pingknf_vnfd.tar.gz` y `pongknf_vnfd.tar.gz`. 
 - Acceda al menu de OSM Packages->NS packages y arrastre el fichero 
-`pingpong_ns.tar.gz`
+`pingpong_nsd.tar.gz`
 
 Alternativamente, puede utilizar la línea de comandos:
 
